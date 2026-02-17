@@ -2,10 +2,10 @@ package com.allobank.angky.rateaggregatorservice.service;
 
 import com.allobank.angky.rateaggregatorservice.constant.ResourceType;
 import com.allobank.angky.rateaggregatorservice.service.strategy.IDRDataFetcher;
+import com.allobank.angky.rateaggregatorservice.store.InMemoryDataStore;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -14,15 +14,15 @@ import java.util.Map;
 public class FinanceDataService {
 
     private final Map<String, IDRDataFetcher> fetcherMap;
+    private final InMemoryDataStore dataStore;
 
     public List getData(String resourceTypeRaw) {
 
         ResourceType resourceType = ResourceType.fromValue(resourceTypeRaw);
 
-        // TODO : get fetcher map resource type
-        // TODO : return from inMemory data store
+        IDRDataFetcher fetcher = fetcherMap.get(resourceType.getValue());
 
-        return new ArrayList<>();
+        return fetcher.getData(dataStore);
     }
 }
 
