@@ -6,3 +6,12 @@ server:
   port: 8080
   servlet:
     context-path: /api/finance
+
+frankfurter:
+  base-url: https://api.frankfurter.dev
+  api-version: /v1
+
+  endpoints:
+    latest: /latest
+    historical: ""
+    currencies: /currencies
