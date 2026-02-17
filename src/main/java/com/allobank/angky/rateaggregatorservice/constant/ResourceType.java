@@ -1,5 +1,6 @@
 package com.allobank.angky.rateaggregatorservice.constant;
 
+import com.allobank.angky.rateaggregatorservice.exception.InvalidResourceTypeException;
 import lombok.Getter;
 
 import java.util.Arrays;
@@ -21,7 +22,7 @@ public enum ResourceType {
         return Arrays.stream(values())
                 .filter(v -> v.value.equalsIgnoreCase(value))
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException(value));
+                .orElseThrow(() -> new InvalidResourceTypeException(value));
     }
 }
 
