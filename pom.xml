@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.allobank.angky</groupId>
 	<artifactId>rate-aggregator-service</artifactId>
-	<version>1.0.4-SNAPSHOT</version>
+	<version>1.0.5-SNAPSHOT</version>
 	<name>rate-aggregator-service</name>
 	<description>Task Allo Bank Rate Aggregator Service</description>
 	<url/>
